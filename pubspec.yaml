@@ -38,7 +38,7 @@ dependencies:
   flutter_bloc: ^8.1.4
   sizer: ^2.0.15
   http: ^1.1.0
-  scroll_bottom_navigation_bar: ^4.0.0
+  equatable: ^2.0.5
   
 
 dev_dependencies:
