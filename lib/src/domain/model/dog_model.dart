@@ -1,9 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
-class DogModel {
+class DogModel extends Equatable {
   final Message? message;
   final String? status;
   DogModel({
@@ -54,109 +55,115 @@ class DogModel {
 
   @override
   int get hashCode => message.hashCode ^ status.hashCode;
+
+  @override
+  bool get stringify => true;
+
+  @override
+  List<Object> get props => [message ?? Object(), status ?? Object()];
 }
 
 class Message {
-  final List<String>? affenpinscher;
-  final List<String> african;
-  final List<String> airedale;
-  final List<String> akita;
-  final List<String> appenzeller;
-  final List<String> australian;
-  final List<String> basenji;
-  final List<String> beagle;
-  final List<String> bluetick;
-  final List<String> borzoi;
-  final List<String> bouvier;
-  final List<String> boxer;
-  final List<String> brabancon;
-  final List<String> briard;
-  final List<String> buhund;
-  final List<String> bulldog;
-  final List<String> bullterrier;
-  final List<String> cattledog;
-  final List<String> chihuahua;
-  final List<String> chow;
-  final List<String> clumber;
-  final List<String> cockapoo;
-  final List<String> collie;
-  final List<String> coonhound;
-  final List<String> corgi;
-  final List<String> cotondetulear;
-  final List<String> dachshund;
-  final List<String> dalmatian;
-  final List<String> dane;
-  final List<String> deerhound;
-  final List<String> dhole;
-  final List<String> dingo;
-  final List<String> doberman;
-  final List<String> elkhound;
-  final List<String> entlebucher;
-  final List<String> eskimo;
-  final List<String> finnish;
-  final List<String> frise;
-  final List<String> germanshepherd;
-  final List<String> greyhound;
-  final List<String> groenendael;
-  final List<String> havanese;
-  final List<String> hound;
-  final List<String> husky;
-  final List<String> keeshond;
-  final List<String> kelpie;
-  final List<String> komondor;
-  final List<String> kuvasz;
-  final List<String> labradoodle;
-  final List<String> labrador;
-  final List<String> leonberg;
-  final List<String> lhasa;
-  final List<String> malamute;
-  final List<String> malinois;
-  final List<String> maltese;
-  final List<String> mastiff;
-  final List<String> mexicanhairless;
-  final List<String> mix;
-  final List<String> mountain;
-  final List<String> newfoundland;
-  final List<String> otterhound;
-  final List<String> ovcharka;
-  final List<String> papillon;
-  final List<String> pekinese;
-  final List<String> pembroke;
-  final List<String> pinscher;
-  final List<String> pitbull;
-  final List<String> pointer;
-  final List<String> pomeranian;
-  final List<String> poodle;
-  final List<String> pug;
-  final List<String> puggle;
-  final List<String> pyrenees;
-  final List<String> redbone;
-  final List<String> retriever;
-  final List<String> ridgeback;
-  final List<String> rottweiler;
-  final List<String> saluki;
-  final List<String> samoyed;
-  final List<String> schipperke;
-  final List<String> schnauzer;
-  final List<String> segugio;
-  final List<String> setter;
-  final List<String> sharpei;
-  final List<String> sheepdog;
-  final List<String> shiba;
-  final List<String> shihtzu;
-  final List<String> spaniel;
-  final List<String> spitz;
-  final List<String> springer;
-  final List<String> stbernard;
-  final List<String> terrier;
-  final List<String> tervuren;
-  final List<String> vizsla;
-  final List<String> waterdog;
-  final List<String> weimaraner;
-  final List<String> whippet;
-  final List<String> wolfhound;
+  final List<dynamic> affenpinscher;
+  final List<dynamic> african;
+  final List<dynamic> airedale;
+  final List<dynamic> akita;
+  final List<dynamic> appenzeller;
+  final List<dynamic> australian;
+  final List<dynamic> basenji;
+  final List<dynamic> beagle;
+  final List<dynamic> bluetick;
+  final List<dynamic> borzoi;
+  final List<dynamic> bouvier;
+  final List<dynamic> boxer;
+  final List<dynamic> brabancon;
+  final List<dynamic> briard;
+  final List<dynamic> buhund;
+  final List<dynamic> bulldog;
+  final List<dynamic> bullterrier;
+  final List<dynamic> cattledog;
+  final List<dynamic> chihuahua;
+  final List<dynamic> chow;
+  final List<dynamic> clumber;
+  final List<dynamic> cockapoo;
+  final List<dynamic> collie;
+  final List<dynamic> coonhound;
+  final List<dynamic> corgi;
+  final List<dynamic> cotondetulear;
+  final List<dynamic> dachshund;
+  final List<dynamic> dalmatian;
+  final List<dynamic> dane;
+  final List<dynamic> deerhound;
+  final List<dynamic> dhole;
+  final List<dynamic> dingo;
+  final List<dynamic> doberman;
+  final List<dynamic> elkhound;
+  final List<dynamic> entlebucher;
+  final List<dynamic> eskimo;
+  final List<dynamic> finnish;
+  final List<dynamic> frise;
+  final List<dynamic> germanshepherd;
+  final List<dynamic> greyhound;
+  final List<dynamic> groenendael;
+  final List<dynamic> havanese;
+  final List<dynamic> hound;
+  final List<dynamic> husky;
+  final List<dynamic> keeshond;
+  final List<dynamic> kelpie;
+  final List<dynamic> komondor;
+  final List<dynamic> kuvasz;
+  final List<dynamic> labradoodle;
+  final List<dynamic> labrador;
+  final List<dynamic> leonberg;
+  final List<dynamic> lhasa;
+  final List<dynamic> malamute;
+  final List<dynamic> malinois;
+  final List<dynamic> maltese;
+  final List<dynamic> mastiff;
+  final List<dynamic> mexicanhairless;
+  final List<dynamic> mix;
+  final List<dynamic> mountain;
+  final List<dynamic> newfoundland;
+  final List<dynamic> otterhound;
+  final List<dynamic> ovcharka;
+  final List<dynamic> papillon;
+  final List<dynamic> pekinese;
+  final List<dynamic> pembroke;
+  final List<dynamic> pinscher;
+  final List<dynamic> pitbull;
+  final List<dynamic> pointer;
+  final List<dynamic> pomeranian;
+  final List<dynamic> poodle;
+  final List<dynamic> pug;
+  final List<dynamic> puggle;
+  final List<dynamic> pyrenees;
+  final List<dynamic> redbone;
+  final List<dynamic> retriever;
+  final List<dynamic> ridgeback;
+  final List<dynamic> rottweiler;
+  final List<dynamic> saluki;
+  final List<dynamic> samoyed;
+  final List<dynamic> schipperke;
+  final List<dynamic> schnauzer;
+  final List<dynamic> segugio;
+  final List<dynamic> setter;
+  final List<dynamic> sharpei;
+  final List<dynamic> sheepdog;
+  final List<dynamic> shiba;
+  final List<dynamic> shihtzu;
+  final List<dynamic> spaniel;
+  final List<dynamic> spitz;
+  final List<dynamic> springer;
+  final List<dynamic> stbernard;
+  final List<dynamic> terrier;
+  final List<dynamic> tervuren;
+  final List<dynamic> vizsla;
+  final List<dynamic> waterdog;
+  final List<dynamic> weimaraner;
+  final List<dynamic> whippet;
+  final List<dynamic> wolfhound;
   Message({
-    this.affenpinscher,
+    required this.affenpinscher,
     required this.african,
     required this.airedale,
     required this.akita,
@@ -257,104 +264,104 @@ class Message {
   });
 
   Message copyWith({
-    List<String>? affenpinscher,
-    List<String>? african,
-    List<String>? airedale,
-    List<String>? akita,
-    List<String>? appenzeller,
-    List<String>? australian,
-    List<String>? basenji,
-    List<String>? beagle,
-    List<String>? bluetick,
-    List<String>? borzoi,
-    List<String>? bouvier,
-    List<String>? boxer,
-    List<String>? brabancon,
-    List<String>? briard,
-    List<String>? buhund,
-    List<String>? bulldog,
-    List<String>? bullterrier,
-    List<String>? cattledog,
-    List<String>? chihuahua,
-    List<String>? chow,
-    List<String>? clumber,
-    List<String>? cockapoo,
-    List<String>? collie,
-    List<String>? coonhound,
-    List<String>? corgi,
-    List<String>? cotondetulear,
-    List<String>? dachshund,
-    List<String>? dalmatian,
-    List<String>? dane,
-    List<String>? deerhound,
-    List<String>? dhole,
-    List<String>? dingo,
-    List<String>? doberman,
-    List<String>? elkhound,
-    List<String>? entlebucher,
-    List<String>? eskimo,
-    List<String>? finnish,
-    List<String>? frise,
-    List<String>? germanshepherd,
-    List<String>? greyhound,
-    List<String>? groenendael,
-    List<String>? havanese,
-    List<String>? hound,
-    List<String>? husky,
-    List<String>? keeshond,
-    List<String>? kelpie,
-    List<String>? komondor,
-    List<String>? kuvasz,
-    List<String>? labradoodle,
-    List<String>? labrador,
-    List<String>? leonberg,
-    List<String>? lhasa,
-    List<String>? malamute,
-    List<String>? malinois,
-    List<String>? maltese,
-    List<String>? mastiff,
-    List<String>? mexicanhairless,
-    List<String>? mix,
-    List<String>? mountain,
-    List<String>? newfoundland,
-    List<String>? otterhound,
-    List<String>? ovcharka,
-    List<String>? papillon,
-    List<String>? pekinese,
-    List<String>? pembroke,
-    List<String>? pinscher,
-    List<String>? pitbull,
-    List<String>? pointer,
-    List<String>? pomeranian,
-    List<String>? poodle,
-    List<String>? pug,
-    List<String>? puggle,
-    List<String>? pyrenees,
-    List<String>? redbone,
-    List<String>? retriever,
-    List<String>? ridgeback,
-    List<String>? rottweiler,
-    List<String>? saluki,
-    List<String>? samoyed,
-    List<String>? schipperke,
-    List<String>? schnauzer,
-    List<String>? segugio,
-    List<String>? setter,
-    List<String>? sharpei,
-    List<String>? sheepdog,
-    List<String>? shiba,
-    List<String>? shihtzu,
-    List<String>? spaniel,
-    List<String>? spitz,
-    List<String>? springer,
-    List<String>? stbernard,
-    List<String>? terrier,
-    List<String>? tervuren,
-    List<String>? vizsla,
-    List<String>? waterdog,
-    List<String>? weimaraner,
-    List<String>? whippet,
-    List<String>? wolfhound,
+    List<dynamic>? affenpinscher,
+    List<dynamic>? african,
+    List<dynamic>? airedale,
+    List<dynamic>? akita,
+    List<dynamic>? appenzeller,
+    List<dynamic>? australian,
+    List<dynamic>? basenji,
+    List<dynamic>? beagle,
+    List<dynamic>? bluetick,
+    List<dynamic>? borzoi,
+    List<dynamic>? bouvier,
+    List<dynamic>? boxer,
+    List<dynamic>? brabancon,
+    List<dynamic>? briard,
+    List<dynamic>? buhund,
+    List<dynamic>? bulldog,
+    List<dynamic>? bullterrier,
+    List<dynamic>? cattledog,
+    List<dynamic>? chihuahua,
+    List<dynamic>? chow,
+    List<dynamic>? clumber,
+    List<dynamic>? cockapoo,
+    List<dynamic>? collie,
+    List<dynamic>? coonhound,
+    List<dynamic>? corgi,
+    List<dynamic>? cotondetulear,
+    List<dynamic>? dachshund,
+    List<dynamic>? dalmatian,
+    List<dynamic>? dane,
+    List<dynamic>? deerhound,
+    List<dynamic>? dhole,
+    List<dynamic>? dingo,
+    List<dynamic>? doberman,
+    List<dynamic>? elkhound,
+    List<dynamic>? entlebucher,
+    List<dynamic>? eskimo,
+    List<dynamic>? finnish,
+    List<dynamic>? frise,
+    List<dynamic>? germanshepherd,
+    List<dynamic>? greyhound,
+    List<dynamic>? groenendael,
+    List<dynamic>? havanese,
+    List<dynamic>? hound,
+    List<dynamic>? husky,
+    List<dynamic>? keeshond,
+    List<dynamic>? kelpie,
+    List<dynamic>? komondor,
+    List<dynamic>? kuvasz,
+    List<dynamic>? labradoodle,
+    List<dynamic>? labrador,
+    List<dynamic>? leonberg,
+    List<dynamic>? lhasa,
+    List<dynamic>? malamute,
+    List<dynamic>? malinois,
+    List<dynamic>? maltese,
+    List<dynamic>? mastiff,
+    List<dynamic>? mexicanhairless,
+    List<dynamic>? mix,
+    List<dynamic>? mountain,
+    List<dynamic>? newfoundland,
+    List<dynamic>? otterhound,
+    List<dynamic>? ovcharka,
+    List<dynamic>? papillon,
+    List<dynamic>? pekinese,
+    List<dynamic>? pembroke,
+    List<dynamic>? pinscher,
+    List<dynamic>? pitbull,
+    List<dynamic>? pointer,
+    List<dynamic>? pomeranian,
+    List<dynamic>? poodle,
+    List<dynamic>? pug,
+    List<dynamic>? puggle,
+    List<dynamic>? pyrenees,
+    List<dynamic>? redbone,
+    List<dynamic>? retriever,
+    List<dynamic>? ridgeback,
+    List<dynamic>? rottweiler,
+    List<dynamic>? saluki,
+    List<dynamic>? samoyed,
+    List<dynamic>? schipperke,
+    List<dynamic>? schnauzer,
+    List<dynamic>? segugio,
+    List<dynamic>? setter,
+    List<dynamic>? sharpei,
+    List<dynamic>? sheepdog,
+    List<dynamic>? shiba,
+    List<dynamic>? shihtzu,
+    List<dynamic>? spaniel,
+    List<dynamic>? spitz,
+    List<dynamic>? springer,
+    List<dynamic>? stbernard,
+    List<dynamic>? terrier,
+    List<dynamic>? tervuren,
+    List<dynamic>? vizsla,
+    List<dynamic>? waterdog,
+    List<dynamic>? weimaraner,
+    List<dynamic>? whippet,
+    List<dynamic>? wolfhound,
   }) {
     return Message(
       affenpinscher: affenpinscher ?? this.affenpinscher,
@@ -563,109 +570,109 @@ class Message {
 
   factory Message.fromMap(Map<String, dynamic> map) {
     return Message(
-        affenpinscher: map['affenpinscher'] != null
-            ? List<String>.from(map['affenpinscher'] as List<String>)
-            : null,
-        african: List<String>.from(map['african'] as List<String>),
-        airedale: List<String>.from(map['airedale'] as List<String>),
-        akita: List<String>.from(map['akita'] as List<String>),
-        appenzeller: List<String>.from(map['appenzeller'] as List<String>),
-        australian: List<String>.from(map['australian'] as List<String>),
-        basenji: List<String>.from(map['basenji'] as List<String>),
-        beagle: List<String>.from(map['beagle'] as List<String>),
-        bluetick: List<String>.from(map['bluetick'] as List<String>),
-        borzoi: List<String>.from(map['borzoi'] as List<String>),
-        bouvier: List<String>.from(map['bouvier'] as List<String>),
-        boxer: List<String>.from(map['boxer'] as List<String>),
-        brabancon: List<String>.from(map['brabancon'] as List<String>),
-        briard: List<String>.from(map['briard'] as List<String>),
-        buhund: List<String>.from(map['buhund'] as List<String>),
-        bulldog: List<String>.from(map['bulldog'] as List<String>),
-        bullterrier: List<String>.from(map['bullterrier'] as List<String>),
-        cattledog: List<String>.from(map['cattledog'] as List<String>),
-        chihuahua: List<String>.from(map['chihuahua'] as List<String>),
-        chow: List<String>.from(map['chow'] as List<String>),
-        clumber: List<String>.from(map['clumber'] as List<String>),
-        cockapoo: List<String>.from(map['cockapoo'] as List<String>),
-        collie: List<String>.from(map['collie'] as List<String>),
-        coonhound: List<String>.from(map['coonhound'] as List<String>),
-        corgi: List<String>.from(map['corgi'] as List<String>),
-        cotondetulear: List<String>.from(map['cotondetulear'] as List<String>),
-        dachshund: List<String>.from(map['dachshund'] as List<String>),
-        dalmatian: List<String>.from(map['dalmatian'] as List<String>),
-        dane: List<String>.from(map['dane'] as List<String>),
-        deerhound: List<String>.from(map['deerhound'] as List<String>),
-        dhole: List<String>.from(map['dhole'] as List<String>),
-        dingo: List<String>.from(map['dingo'] as List<String>),
-        doberman: List<String>.from(map['doberman'] as List<String>),
-        elkhound: List<String>.from(map['elkhound'] as List<String>),
-        entlebucher: List<String>.from(map['entlebucher'] as List<String>),
-        eskimo: List<String>.from(map['eskimo'] as List<String>),
-        finnish: List<String>.from(map['finnish'] as List<String>),
-        frise: List<String>.from(map['frise'] as List<String>),
+        affenpinscher:
+            List<dynamic>.from(map['affenpinscher'] as List<dynamic>),
+        african: List<dynamic>.from(map['african'] as List<dynamic>),
+        airedale: List<dynamic>.from(map['airedale'] as List<dynamic>),
+        akita: List<dynamic>.from(map['akita'] as List<dynamic>),
+        appenzeller: List<dynamic>.from(map['appenzeller'] as List<dynamic>),
+        australian: List<dynamic>.from(map['australian'] as List<dynamic>),
+        basenji: List<dynamic>.from(map['basenji'] as List<dynamic>),
+        beagle: List<dynamic>.from(map['beagle'] as List<dynamic>),
+        bluetick: List<dynamic>.from(map['bluetick'] as List<dynamic>),
+        borzoi: List<dynamic>.from(map['borzoi'] as List<dynamic>),
+        bouvier: List<dynamic>.from(map['bouvier'] as List<dynamic>),
+        boxer: List<dynamic>.from(map['boxer'] as List<dynamic>),
+        brabancon: List<dynamic>.from(map['brabancon'] as List<dynamic>),
+        briard: List<dynamic>.from(map['briard'] as List<dynamic>),
+        buhund: List<dynamic>.from(map['buhund'] as List<dynamic>),
+        bulldog: List<dynamic>.from(map['bulldog'] as List<dynamic>),
+        bullterrier: List<dynamic>.from(map['bullterrier'] as List<dynamic>),
+        cattledog: List<dynamic>.from(map['cattledog'] as List<dynamic>),
+        chihuahua: List<dynamic>.from(map['chihuahua'] as List<dynamic>),
+        chow: List<dynamic>.from(map['chow'] as List<dynamic>),
+        clumber: List<dynamic>.from(map['clumber'] as List<dynamic>),
+        cockapoo: List<dynamic>.from(map['cockapoo'] as List<dynamic>),
+        collie: List<dynamic>.from(map['collie'] as List<dynamic>),
+        coonhound: List<dynamic>.from(map['coonhound'] as List<dynamic>),
+        corgi: List<dynamic>.from(map['corgi'] as List<dynamic>),
+        cotondetulear:
+            List<dynamic>.from(map['cotondetulear'] as List<dynamic>),
+        dachshund: List<dynamic>.from(map['dachshund'] as List<dynamic>),
+        dalmatian: List<dynamic>.from(map['dalmatian'] as List<dynamic>),
+        dane: List<dynamic>.from(map['dane'] as List<dynamic>),
+        deerhound: List<dynamic>.from(map['deerhound'] as List<dynamic>),
+        dhole: List<dynamic>.from(map['dhole'] as List<dynamic>),
+        dingo: List<dynamic>.from(map['dingo'] as List<dynamic>),
+        doberman: List<dynamic>.from(map['doberman'] as List<dynamic>),
+        elkhound: List<dynamic>.from(map['elkhound'] as List<dynamic>),
+        entlebucher: List<dynamic>.from(map['entlebucher'] as List<dynamic>),
+        eskimo: List<dynamic>.from(map['eskimo'] as List<dynamic>),
+        finnish: List<dynamic>.from(map['finnish'] as List<dynamic>),
+        frise: List<dynamic>.from(map['frise'] as List<dynamic>),
         germanshepherd:
-            List<String>.from(map['germanshepherd'] as List<String>),
-        greyhound: List<String>.from(map['greyhound'] as List<String>),
-        groenendael: List<String>.from(map['groenendael'] as List<String>),
-        havanese: List<String>.from(map['havanese'] as List<String>),
-        hound: List<String>.from(map['hound'] as List<String>),
-        husky: List<String>.from(map['husky'] as List<String>),
-        keeshond: List<String>.from(map['keeshond'] as List<String>),
-        kelpie: List<String>.from(map['kelpie'] as List<String>),
-        komondor: List<String>.from(map['komondor'] as List<String>),
-        kuvasz: List<String>.from(map['kuvasz'] as List<String>),
-        labradoodle: List<String>.from(map['labradoodle'] as List<String>),
-        labrador: List<String>.from(map['labrador'] as List<String>),
-        leonberg: List<String>.from(map['leonberg'] as List<String>),
-        lhasa: List<String>.from(map['lhasa'] as List<String>),
-        malamute: List<String>.from(map['malamute'] as List<String>),
-        malinois: List<String>.from(map['malinois'] as List<String>),
-        maltese: List<String>.from(map['maltese'] as List<String>),
-        mastiff: List<String>.from(map['mastiff'] as List<String>),
+            List<dynamic>.from(map['germanshepherd'] as List<dynamic>),
+        greyhound: List<dynamic>.from(map['greyhound'] as List<dynamic>),
+        groenendael: List<dynamic>.from(map['groenendael'] as List<dynamic>),
+        havanese: List<dynamic>.from(map['havanese'] as List<dynamic>),
+        hound: List<dynamic>.from(map['hound'] as List<dynamic>),
+        husky: List<dynamic>.from(map['husky'] as List<dynamic>),
+        keeshond: List<dynamic>.from(map['keeshond'] as List<dynamic>),
+        kelpie: List<dynamic>.from(map['kelpie'] as List<dynamic>),
+        komondor: List<dynamic>.from(map['komondor'] as List<dynamic>),
+        kuvasz: List<dynamic>.from(map['kuvasz'] as List<dynamic>),
+        labradoodle: List<dynamic>.from(map['labradoodle'] as List<dynamic>),
+        labrador: List<dynamic>.from(map['labrador'] as List<dynamic>),
+        leonberg: List<dynamic>.from(map['leonberg'] as List<dynamic>),
+        lhasa: List<dynamic>.from(map['lhasa'] as List<dynamic>),
+        malamute: List<dynamic>.from(map['malamute'] as List<dynamic>),
+        malinois: List<dynamic>.from(map['malinois'] as List<dynamic>),
+        maltese: List<dynamic>.from(map['maltese'] as List<dynamic>),
+        mastiff: List<dynamic>.from(map['mastiff'] as List<dynamic>),
         mexicanhairless:
-            List<String>.from(map['mexicanhairless'] as List<String>),
-        mix: List<String>.from(map['mix'] as List<String>),
-        mountain: List<String>.from(map['mountain'] as List<String>),
-        newfoundland: List<String>.from(map['newfoundland'] as List<String>),
-        otterhound: List<String>.from(map['otterhound'] as List<String>),
-        ovcharka: List<String>.from(map['ovcharka'] as List<String>),
-        papillon: List<String>.from(map['papillon'] as List<String>),
-        pekinese: List<String>.from(map['pekinese'] as List<String>),
-        pembroke: List<String>.from(map['pembroke'] as List<String>),
-        pinscher: List<String>.from(map['pinscher'] as List<String>),
-        pitbull: List<String>.from(map['pitbull'] as List<String>),
-        pointer: List<String>.from(map['pointer'] as List<String>),
-        pomeranian: List<String>.from(map['pomeranian'] as List<String>),
-        poodle: List<String>.from(map['poodle'] as List<String>),
-        pug: List<String>.from(map['pug'] as List<String>),
-        puggle: List<String>.from(map['puggle'] as List<String>),
-        pyrenees: List<String>.from(map['pyrenees'] as List<String>),
-        redbone: List<String>.from(map['redbone'] as List<String>),
-        retriever: List<String>.from(map['retriever'] as List<String>),
-        ridgeback: List<String>.from(map['ridgeback'] as List<String>),
-        rottweiler: List<String>.from(map['rottweiler'] as List<String>),
-        saluki: List<String>.from(map['saluki'] as List<String>),
-        samoyed: List<String>.from(map['samoyed'] as List<String>),
-        schipperke: List<String>.from(map['schipperke'] as List<String>),
-        schnauzer: List<String>.from(map['schnauzer'] as List<String>),
-        segugio: List<String>.from(map['segugio'] as List<String>),
-        setter: List<String>.from(map['setter'] as List<String>),
-        sharpei: List<String>.from(map['sharpei'] as List<String>),
-        sheepdog: List<String>.from(map['sheepdog'] as List<String>),
-        shiba: List<String>.from(map['shiba'] as List<String>),
-        shihtzu: List<String>.from(map['shihtzu'] as List<String>),
-        spaniel: List<String>.from(map['spaniel'] as List<String>),
-        spitz: List<String>.from(map['spitz'] as List<String>),
-        springer: List<String>.from(map['springer'] as List<String>),
-        stbernard: List<String>.from(map['stbernard'] as List<String>),
-        terrier: List<String>.from(map['terrier'] as List<String>),
-        tervuren: List<String>.from(map['tervuren'] as List<String>),
-        vizsla: List<String>.from(map['vizsla'] as List<String>),
-        waterdog: List<String>.from(map['waterdog'] as List<String>),
-        weimaraner: List<String>.from(map['weimaraner'] as List<String>),
-        whippet: List<String>.from(map['whippet'] as List<String>),
-        wolfhound: List<String>.from(
-          (map['wolfhound'] as List<String>),
+            List<dynamic>.from(map['mexicanhairless'] as List<dynamic>),
+        mix: List<dynamic>.from(map['mix'] as List<dynamic>),
+        mountain: List<dynamic>.from(map['mountain'] as List<dynamic>),
+        newfoundland: List<dynamic>.from(map['newfoundland'] as List<dynamic>),
+        otterhound: List<dynamic>.from(map['otterhound'] as List<dynamic>),
+        ovcharka: List<dynamic>.from(map['ovcharka'] as List<dynamic>),
+        papillon: List<dynamic>.from(map['papillon'] as List<dynamic>),
+        pekinese: List<dynamic>.from(map['pekinese'] as List<dynamic>),
+        pembroke: List<dynamic>.from(map['pembroke'] as List<dynamic>),
+        pinscher: List<dynamic>.from(map['pinscher'] as List<dynamic>),
+        pitbull: List<dynamic>.from(map['pitbull'] as List<dynamic>),
+        pointer: List<dynamic>.from(map['pointer'] as List<dynamic>),
+        pomeranian: List<dynamic>.from(map['pomeranian'] as List<dynamic>),
+        poodle: List<dynamic>.from(map['poodle'] as List<dynamic>),
+        pug: List<dynamic>.from(map['pug'] as List<dynamic>),
+        puggle: List<dynamic>.from(map['puggle'] as List<dynamic>),
+        pyrenees: List<dynamic>.from(map['pyrenees'] as List<dynamic>),
+        redbone: List<dynamic>.from(map['redbone'] as List<dynamic>),
+        retriever: List<dynamic>.from(map['retriever'] as List<dynamic>),
+        ridgeback: List<dynamic>.from(map['ridgeback'] as List<dynamic>),
+        rottweiler: List<dynamic>.from(map['rottweiler'] as List<dynamic>),
+        saluki: List<dynamic>.from(map['saluki'] as List<dynamic>),
+        samoyed: List<dynamic>.from(map['samoyed'] as List<dynamic>),
+        schipperke: List<dynamic>.from(map['schipperke'] as List<dynamic>),
+        schnauzer: List<dynamic>.from(map['schnauzer'] as List<dynamic>),
+        segugio: List<dynamic>.from(map['segugio'] as List<dynamic>),
+        setter: List<dynamic>.from(map['setter'] as List<dynamic>),
+        sharpei: List<dynamic>.from(map['sharpei'] as List<dynamic>),
+        sheepdog: List<dynamic>.from(map['sheepdog'] as List<dynamic>),
+        shiba: List<dynamic>.from(map['shiba'] as List<dynamic>),
+        shihtzu: List<dynamic>.from(map['shihtzu'] as List<dynamic>),
+        spaniel: List<dynamic>.from(map['spaniel'] as List<dynamic>),
+        spitz: List<dynamic>.from(map['spitz'] as List<dynamic>),
+        springer: List<dynamic>.from(map['springer'] as List<dynamic>),
+        stbernard: List<dynamic>.from(map['stbernard'] as List<dynamic>),
+        terrier: List<dynamic>.from(map['terrier'] as List<dynamic>),
+        tervuren: List<dynamic>.from(map['tervuren'] as List<dynamic>),
+        vizsla: List<dynamic>.from(map['vizsla'] as List<dynamic>),
+        waterdog: List<dynamic>.from(map['waterdog'] as List<dynamic>),
+        weimaraner: List<dynamic>.from(map['weimaraner'] as List<dynamic>),
+        whippet: List<dynamic>.from(map['whippet'] as List<dynamic>),
+        wolfhound: List<dynamic>.from(
+          (map['wolfhound'] as List<dynamic>),
         ));
   }
 

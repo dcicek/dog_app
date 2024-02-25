@@ -19,13 +19,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
-      return MaterialApp(
-        theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-        ),
-        home: BlocProvider(
-          create: (context) => DogBloc(DogRepo(service: Services())),
-          child: const SplashScreen(),
+      return BlocProvider(
+        create: (context) => DogBloc(DogRepo(service: Services())),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            scaffoldBackgroundColor: Colors.white,
+          ),
+          home: const SplashScreen(),
         ),
       );
     });
