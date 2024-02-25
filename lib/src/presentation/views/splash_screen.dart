@@ -1,5 +1,4 @@
 import 'package:dog_app/src/presentation/bloc/dog_bloc/dog_bloc_bloc.dart';
-import 'package:dog_app/src/presentation/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,16 +16,16 @@ class _SplashScreenState extends State<SplashScreen> {
     return BlocListener<DogBloc, DogState>(
       listener: (context, state) {
         if (state is DogInitial) {
-          var a = state.breedList!["message"];
-          print(List<String>.from(state.breedList!["message"].keys)[0]);
           context.read<DogBloc>().add((GetBreedImage(
               breed: List<String>.from(state.breedList!["message"].keys))));
         } else if (state is DogImagesInitial) {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const HomePage(),
-              ));
+          //  Navigator.push(
+          //      context,
+          //      MaterialPageRoute(
+          //        builder: (context) => const HomePage(),
+          //      ));
+
+          Navigator.pushNamed(context, '/home');
         }
       },
       child: Scaffold(

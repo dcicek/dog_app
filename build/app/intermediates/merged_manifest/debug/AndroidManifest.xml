@@ -20,8 +20,7 @@
         android:debuggable="true"
         android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="dog_app"
-        android:testOnly="true" >
+        android:label="dog_app" >
         <activity
             android:name="com.example.dog_app.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

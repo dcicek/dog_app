@@ -1,9 +1,8 @@
-import 'dart:developer';
-
 import 'package:dog_app/src/data/datasources/service/service.dart';
 import 'package:dog_app/src/data/repositories/dog_service_repo.dart';
 import 'package:dog_app/src/presentation/bloc/bloc.dart';
 import 'package:dog_app/src/presentation/bloc/dog_bloc/dog_bloc_bloc.dart';
+import 'package:dog_app/src/presentation/views/home.dart';
 import 'package:dog_app/src/presentation/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,11 +21,14 @@ class MyApp extends StatelessWidget {
       return BlocProvider(
         create: (context) => DogBloc(DogRepo(service: Services())),
         child: MaterialApp(
+          routes: {
+            '/': (context) => const SplashScreen(),
+            '/home': (context) => const HomePage(),
+          },
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             scaffoldBackgroundColor: Colors.white,
           ),
-          home: const SplashScreen(),
         ),
       );
     });

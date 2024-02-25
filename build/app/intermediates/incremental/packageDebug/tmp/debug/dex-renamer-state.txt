@@ -1,4 +1,4 @@
-#Sun Feb 25 22:26:47 TRT 2024
+#Sun Feb 25 22:58:36 TRT 2024
 base.0=/Users/didemcicekkaraoz/Documents/GitHub/dog_app/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/didemcicekkaraoz/Documents/GitHub/dog_app/build/app/intermediates/dex/debug/mergeLibDexDebug/15/classes.dex
 base.2=/Users/didemcicekkaraoz/Documents/GitHub/dog_app/build/app/intermediates/dex/debug/mergeLibDexDebug/4/classes.dex
