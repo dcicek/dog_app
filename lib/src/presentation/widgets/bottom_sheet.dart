@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomBottomSheet {
-  static showBottomSheet(BuildContext context) {
+  static showBottomSheet(BuildContext context, String os) {
     showModalBottomSheet(
       isScrollControlled: true,
       context: context,
       builder: (BuildContext context) {
         return SizedBox(
           height: 100.h,
-          child: const Padding(
+          child: Padding(
             padding: EdgeInsets.only(top: 25),
             child: Column(children: [
               CustomSettingItem(
@@ -33,7 +33,7 @@ class CustomBottomSheet {
               CustomSettingItem(
                 assetName: "lib/assets/os.png",
                 title: "OS Version",
-                osInfo: "6.7",
+                osInfo: os,
               ),
             ]),
           ),

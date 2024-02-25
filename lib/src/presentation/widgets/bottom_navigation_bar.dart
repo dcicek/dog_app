@@ -2,6 +2,7 @@ import 'package:dog_app/src/config/theme/colors.dart';
 import 'package:dog_app/src/config/theme/font_property.dart';
 import 'package:dog_app/src/presentation/widgets/bottom_sheet.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class BottomNavBarWidget extends StatefulWidget {
   const BottomNavBarWidget({super.key});
@@ -11,6 +12,18 @@ class BottomNavBarWidget extends StatefulWidget {
 }
 
 class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
+  static const platform = MethodChannel('com.example.dog_app');
+
+  Future<String> getOsInfo() async {
+    try {
+      String osPlatform = await platform.invokeMethod('getOsInfo');
+      return osPlatform;
+    } on PlatformException catch (e) {
+      print('Error: $e');
+      return "HATA";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return ClipPath(
@@ -50,8 +63,9 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
                 ),
                 Expanded(
                   child: GestureDetector(
-                    onTap: () {
-                      CustomBottomSheet.showBottomSheet(context);
+                    onTap: () async {
+                      String os = await getOsInfo();
+                      CustomBottomSheet.showBottomSheet(context, os);
                     },
                     child: Column(
                       children: [

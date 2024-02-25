@@ -3,9 +3,7 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:dog_app/src/data/datasources/api_connection.dart';
-import 'package:dog_app/src/domain/model/dog_model.dart';
 import 'package:dog_app/src/domain/model/error_model.dart';
-import 'package:dog_app/src/domain/model/image_model.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:http/http.dart' as http;
@@ -46,6 +44,7 @@ class Services {
             image = json.decode(temp);
             images.add(image["message"]);
 
+            //Url'i çekilen resmin cache'e alınma işlemi yapılıyor.
             final imageBytes = await downloadImage(image["message"]);
             await DefaultCacheManager().putFile(item, imageBytes);
 
@@ -65,11 +64,9 @@ class Services {
     final response = await http.get(Uri.parse(imageUrl));
 
     if (response.statusCode == 200) {
-      // Resim başarıyla indirildiyse, byte dizisi olarak döndür
       return response.bodyBytes;
     } else {
-      // Hata durumunda boş bir byte dizisi döndür veya isteğe bağlı olarak hata işleme yapabilirsiniz
-      throw Exception('Failed to download image');
+      throw Exception('Fail');
     }
   }
 }

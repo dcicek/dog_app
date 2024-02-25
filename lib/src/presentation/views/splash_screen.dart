@@ -2,7 +2,6 @@ import 'package:dog_app/src/presentation/bloc/dog_bloc/dog_bloc_bloc.dart';
 import 'package:dog_app/src/presentation/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,14 +17,15 @@ class _SplashScreenState extends State<SplashScreen> {
     return BlocListener<DogBloc, DogState>(
       listener: (context, state) {
         if (state is DogInitial) {
-          print(state.breedList!["message"]);
+          var a = state.breedList!["message"];
+          print(List<String>.from(state.breedList!["message"].keys)[0]);
           context.read<DogBloc>().add((GetBreedImage(
               breed: List<String>.from(state.breedList!["message"].keys))));
         } else if (state is DogImagesInitial) {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomePage(),
+                builder: (context) => const HomePage(),
               ));
         }
       },

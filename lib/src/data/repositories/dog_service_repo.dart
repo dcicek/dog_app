@@ -3,10 +3,7 @@ import 'dart:developer';
 
 import 'package:dog_app/src/data/datasources/service/service.dart';
 import 'package:dartz/dartz.dart';
-import 'package:dog_app/src/domain/model/dog_model.dart';
 import 'package:dog_app/src/domain/model/error_model.dart';
-import 'package:dog_app/src/domain/model/image_model.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 class DogRepo {
   Services service;
