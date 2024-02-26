@@ -12,24 +12,24 @@ class CustomBottomSheet {
         return SizedBox(
           height: 100.h,
           child: Padding(
-            padding: EdgeInsets.only(top: 25),
+            padding: const EdgeInsets.only(top: 25),
             child: Column(children: [
-              CustomSettingItem(
+              const CustomSettingItem(
                   assetName: "lib/assets/help.png", title: "Help"),
-              CustomDivider(),
-              CustomSettingItem(
+              const CustomDivider(),
+              const CustomSettingItem(
                   assetName: "lib/assets/rate.png", title: "Rate Us"),
-              CustomDivider(),
-              CustomSettingItem(
+              const CustomDivider(),
+              const CustomSettingItem(
                   assetName: "lib/assets/share.png",
                   title: "Share with Friends"),
-              CustomDivider(),
-              CustomSettingItem(
+              const CustomDivider(),
+              const CustomSettingItem(
                   assetName: "lib/assets/terms.png", title: "Terms of Use"),
-              CustomDivider(),
-              CustomSettingItem(
+              const CustomDivider(),
+              const CustomSettingItem(
                   assetName: "lib/assets/privacy.png", title: "Privacy Policy"),
-              CustomDivider(),
+              const CustomDivider(),
               CustomSettingItem(
                 assetName: "lib/assets/os.png",
                 title: "OS Version",

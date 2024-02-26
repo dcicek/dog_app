@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dog_app/src/presentation/bloc/dog_bloc/dog_bloc_bloc.dart';
 import 'package:dog_app/src/presentation/widgets/bottom_navigation_bar.dart';
+import 'package:dog_app/src/presentation/widgets/custom_alert_dialog.dart';
+import 'package:dog_app/src/presentation/widgets/no_result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -35,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                       ? List<String>.from(state.breedList!["message"].keys)
                       : [];
               return state is UnFound
-                  ? Text("Bulunamadı")
+                  ? const NoResultWidget()
                   : GridView.builder(
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
@@ -51,11 +53,23 @@ class _HomePageState extends State<HomePage> {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(12.0)),
                             child: Stack(children: [
-                              CachedNetworkImage(
-                                imageUrl: state.images![index],
-                                width: 163.5,
-                                height: 163.5,
-                                fit: BoxFit.cover,
+                              GestureDetector(
+                                onTap: () {
+                                  CustomAlertDialog.getAlert(
+                                      context,
+                                      {
+                                        breedList[index]:
+                                            state.breedList!["message"]
+                                                [breedList[index]]
+                                      },
+                                      state.images![index]);
+                                },
+                                child: CachedNetworkImage(
+                                  imageUrl: state.images![index],
+                                  width: 163.5,
+                                  height: 163.5,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               Positioned(
                                 bottom: 0,
