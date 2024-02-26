@@ -28,8 +28,6 @@ class DogRepo {
     try {
       final response = await service.getImageByBreeds(breed);
 
-      response.fold((l) {}, (r) async {});
-
       return response;
     } catch (e) {
       log(e.toString());

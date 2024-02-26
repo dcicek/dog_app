@@ -3,3 +3,4 @@
 *.apk
 build/app/outputs/flutter-apk/app-debug.apk
 build/app/outputs/flutter-apk/app-debug.apk.sha1
+*.apk

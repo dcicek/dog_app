@@ -11,3 +11,10 @@ class GetBreedImage extends DogEvent {
     required this.breed,
   });
 }
+
+class SearchBreed extends DogEvent {
+  final String breed;
+  SearchBreed({
+    required this.breed,
+  });
+}
