@@ -3,4 +3,5 @@ class FontProperty {
   static double bottomNavBarFontSize = 11.0;
   static double settingItemFontSize = 16.0;
   static double noResultTitle = 18.0;
+  static double alertTitle = 20.0;
 }
