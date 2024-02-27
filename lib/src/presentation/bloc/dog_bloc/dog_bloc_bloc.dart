@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'dart:ui';
 
 import 'package:dog_app/src/data/repositories/dog_service_repo.dart';
 import 'package:dog_app/src/domain/model/error_model.dart';

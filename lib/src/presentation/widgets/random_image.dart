@@ -7,30 +7,32 @@ class RandomImageWidget {
     return showDialog(
       context: context,
       builder: (context) {
-        return Center(
-          child: Column(
-            children: [
-              CachedNetworkImage(
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+              child: CachedNetworkImage(
                 imageUrl: imageUrl,
                 width: 90.w,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                    width: 32,
-                    height: 32,
-                    decoration: const BoxDecoration(
-                        shape: BoxShape.rectangle, color: Colors.white),
-                    child: const Icon(Icons.close),
-                  ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  width: 32,
+                  height: 32,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.rectangle, color: Colors.white),
+                  child: const Icon(Icons.close),
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         );
       },
     );

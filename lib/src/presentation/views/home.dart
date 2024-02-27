@@ -7,6 +7,7 @@ import 'package:dog_app/src/presentation/widgets/random_image.dart';
 import 'package:dog_app/src/presentation/widgets/search_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -52,8 +53,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         itemCount: breedList.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(12.0),
+                          return Center(
                             child: Stack(children: [
                               GestureDetector(
                                 onTap: () {
@@ -71,14 +71,14 @@ class _HomePageState extends State<HomePage> {
                                       Radius.circular(15.0)),
                                   child: CachedNetworkImage(
                                     imageUrl: state.images![index],
-                                    width: 163.5,
-                                    height: 163.5,
+                                    width: 45.w,
+                                    height: 45.w,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
                               ),
                               Positioned(
-                                bottom: 10,
+                                bottom: 0,
                                 child: Container(
                                   decoration: const BoxDecoration(
                                       borderRadius: BorderRadius.only(
