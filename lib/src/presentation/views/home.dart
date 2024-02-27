@@ -4,6 +4,7 @@ import 'package:dog_app/src/presentation/widgets/bottom_navigation_bar.dart';
 import 'package:dog_app/src/presentation/widgets/custom_alert_dialog.dart';
 import 'package:dog_app/src/presentation/widgets/no_result.dart';
 import 'package:dog_app/src/presentation/widgets/random_image.dart';
+import 'package:dog_app/src/presentation/widgets/search_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,7 +16,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,43 +99,11 @@ class _HomePageState extends State<HomePage> {
                       );
               },
             ),
-            Align(
+            const Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  height: 64,
-                  width: double.maxFinite,
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                  child: TextField(
-                    decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.grey,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.grey,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.grey,
-                          ),
-                        ),
-                        hintText: 'Search',
-                        hintStyle:
-                            TextStyle(color: Color.fromRGBO(60, 60, 67, 0.6))),
-                    onChanged: (value) {
-                      context.read<DogBloc>().add(SearchBreed(breed: value));
-                    },
-                    controller: searchController,
-                  ),
-                ),
+                padding: EdgeInsets.all(16.0),
+                child: CustomSearchField(),
               ),
             )
           ],

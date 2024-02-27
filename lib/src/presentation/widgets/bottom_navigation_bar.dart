@@ -65,7 +65,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
                   child: GestureDetector(
                     onTap: () async {
                       String os = await getOsInfo();
-                      CustomBottomSheet.showBottomSheet(context, os);
+                      CustomBottomSheet.settingsBottomSheet(context, os);
                     },
                     child: Column(
                       children: [

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomBottomSheet {
-  static showBottomSheet(BuildContext context, String os) {
+  static settingsBottomSheet(BuildContext context, String os) {
     showModalBottomSheet(
       isScrollControlled: true,
       context: context,
