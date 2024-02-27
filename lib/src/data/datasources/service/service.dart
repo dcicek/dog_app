@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:dog_app/src/data/datasources/api_connection.dart';
 import 'package:dog_app/src/domain/model/error_model.dart';
+import 'package:dog_app/src/domain/model/image_model.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:http/http.dart' as http;
@@ -67,6 +68,26 @@ class Services {
       return response.bodyBytes;
     } else {
       throw Exception('Fail');
+    }
+  }
+
+  Future<Either<ErrorModel, ImageModel>> generateRandomImage(
+      String breed) async {
+    try {
+      final response = await http
+          .get(Uri.parse('${ApiConnection.apiInfo}breed/$breed/images/random'));
+
+      switch (response.statusCode) {
+        case 200:
+          String temp = response.body.replaceAll(r'\', '');
+          return Right(ImageModel.fromJson(temp));
+        default:
+          return Left(ErrorModel.fromJson(response.body));
+      }
+    } catch (e) {
+      log(e.toString());
+      return const Left(
+          ErrorModel(code: 500, status: "false", message: "Bir hata oluştu"));
     }
   }
 }

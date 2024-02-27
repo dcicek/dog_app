@@ -83,3 +83,43 @@ class Failed extends DogState {
             tempImages: tempImages);
   List<Object> get props => [error];
 }
+
+class RandomImageInitial extends DogState {
+  final ImageModel randomImage;
+  final Map<String, dynamic>? breedList;
+  final List<String>? images;
+  final Map<String, dynamic>? tempBreedList;
+  final List<String>? tempImages;
+  RandomImageInitial(
+      {required this.randomImage,
+      required this.breedList,
+      required this.images,
+      required this.tempBreedList,
+      required this.tempImages})
+      : super(
+            breedList: breedList,
+            images: images,
+            tempBreedList: tempBreedList,
+            tempImages: tempImages);
+  List<Object> get props => [randomImage];
+}
+
+class RandomImageFail extends DogState {
+  final ErrorModel error;
+  final Map<String, dynamic>? breedList;
+  final List<String>? images;
+  final Map<String, dynamic>? tempBreedList;
+  final List<String>? tempImages;
+  RandomImageFail(
+      {required this.error,
+      required this.breedList,
+      required this.images,
+      required this.tempBreedList,
+      required this.tempImages})
+      : super(
+            breedList: breedList,
+            images: images,
+            tempBreedList: tempBreedList,
+            tempImages: tempImages);
+  List<Object> get props => [error];
+}

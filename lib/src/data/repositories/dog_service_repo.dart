@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:dog_app/src/data/datasources/service/service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dog_app/src/domain/model/error_model.dart';
+import 'package:dog_app/src/domain/model/image_model.dart';
 
 class DogRepo {
   Services service;
@@ -27,6 +28,19 @@ class DogRepo {
       List<String> breed) async {
     try {
       final response = await service.getImageByBreeds(breed);
+
+      return response;
+    } catch (e) {
+      log(e.toString());
+      return const Left(ErrorModel(
+          message: "Beklenmedik bir hata oluştu.", status: 'false', code: 500));
+    }
+  }
+
+  Future<Either<ErrorModel, ImageModel>> generateRandomImage(
+      String breed) async {
+    try {
+      final response = await service.generateRandomImage(breed);
 
       return response;
     } catch (e) {

@@ -18,3 +18,10 @@ class SearchBreed extends DogEvent {
     required this.breed,
   });
 }
+
+class GenerateRandomImage extends DogEvent {
+  final String breed;
+  GenerateRandomImage({
+    required this.breed,
+  });
+}

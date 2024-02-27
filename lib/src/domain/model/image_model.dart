@@ -5,10 +5,10 @@ import 'package:equatable/equatable.dart';
 
 class ImageModel extends Equatable {
   final String message;
-  final String success;
+  final String status;
   const ImageModel({
     required this.message,
-    required this.success,
+    required this.status,
   });
 
   ImageModel copyWith({
@@ -17,21 +17,21 @@ class ImageModel extends Equatable {
   }) {
     return ImageModel(
       message: message ?? this.message,
-      success: success ?? this.success,
+      status: success ?? this.status,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'message': message,
-      'success': success,
+      'status': status,
     };
   }
 
   factory ImageModel.fromMap(Map<String, dynamic> map) {
     return ImageModel(
       message: map['message'] as String,
-      success: map['success'] as String,
+      status: map['status'] as String,
     );
   }
 
@@ -44,5 +44,5 @@ class ImageModel extends Equatable {
   bool get stringify => true;
 
   @override
-  List<Object> get props => [message, success];
+  List<Object> get props => [message, status];
 }

@@ -1,8 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dog_app/src/config/theme/colors.dart';
 import 'package:dog_app/src/config/theme/font_property.dart';
+import 'package:dog_app/src/presentation/bloc/dog_bloc/dog_bloc_bloc.dart';
 import 'package:dog_app/src/presentation/widgets/divider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomAlertDialog {
@@ -27,9 +29,30 @@ class CustomAlertDialog {
                 color: Colors.white,
               ),
               child: Column(children: [
-                CachedNetworkImage(
-                  imageUrl: image,
-                  height: 35.h,
+                Stack(
+                  children: [
+                    CachedNetworkImage(
+                      imageUrl: image,
+                      height: 35.h,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                    Positioned(
+                      right: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          width: 32,
+                          height: 32,
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle, color: Colors.white),
+                          child: const Icon(Icons.close),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
                 const SizedBox(
                   height: 8,
@@ -81,7 +104,9 @@ class CustomAlertDialog {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    context
+                        .read<DogBloc>()
+                        .add(GenerateRandomImage(breed: tempKeys[0]));
                   },
                   child: const SizedBox(
                       width: 300,

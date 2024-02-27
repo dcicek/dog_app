@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
           context.read<DogBloc>().add((GetBreedImage(
               breed: List<String>.from(state.breedList!["message"].keys))));
         } else if (state is DogImagesInitial) {
-          Navigator.pushNamed(context, '/home');
+          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
         }
       },
       child: Scaffold(
