@@ -45,31 +45,30 @@ class _HomePageState extends State<HomePage> {
                 return state is UnFound
                     ? const NoResultWidget()
                     : GridView.builder(
+                        shrinkWrap: true,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          crossAxisSpacing: 8.0,
-                          mainAxisSpacing: 8.0,
                         ),
                         itemCount: breedList.length,
                         itemBuilder: (BuildContext context, int index) {
                           return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ClipRRect(
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(12.0)),
-                              child: Stack(children: [
-                                GestureDetector(
-                                  onTap: () {
-                                    CustomAlertDialog.getAlert(
-                                        context,
-                                        {
-                                          breedList[index]:
-                                              state.breedList!["message"]
-                                                  [breedList[index]]
-                                        },
-                                        state.images![index]);
-                                  },
+                            padding: const EdgeInsets.all(12.0),
+                            child: Stack(children: [
+                              GestureDetector(
+                                onTap: () {
+                                  CustomAlertDialog.getAlert(
+                                      context,
+                                      {
+                                        breedList[index]:
+                                            state.breedList!["message"]
+                                                [breedList[index]]
+                                      },
+                                      state.images![index]);
+                                },
+                                child: ClipRRect(
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(15.0)),
                                   child: CachedNetworkImage(
                                     imageUrl: state.images![index],
                                     width: 163.5,
@@ -77,23 +76,26 @@ class _HomePageState extends State<HomePage> {
                                     fit: BoxFit.cover,
                                   ),
                                 ),
-                                Positioned(
-                                  bottom: 0,
-                                  child: Container(
-                                    decoration: const BoxDecoration(
-                                        color: Color.fromRGBO(0, 0, 0, 0.24)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        breedList[index],
-                                        style: const TextStyle(
-                                            color: Colors.white),
-                                      ),
+                              ),
+                              Positioned(
+                                bottom: 10,
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(15.0),
+                                          bottomLeft: Radius.circular(15.0)),
+                                      color: Color.fromRGBO(0, 0, 0, 0.24)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      breedList[index],
+                                      style:
+                                          const TextStyle(color: Colors.white),
                                     ),
                                   ),
                                 ),
-                              ]),
-                            ),
+                              ),
+                            ]),
                           );
                         },
                       );
